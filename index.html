@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="echarts.min.js"></script>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 100%;height:566px;text-align:center"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+option = {
+    title: [{
+        text: '2010~2019中国化妆品各销售渠道市占比变化',
+        subtext: 'Market share change of cosmetics sales channels in China from 2010 to 2019\n\n\n                                                                                                                                                   （点击标签  查看比较情况）',
+        x: '80',
+        y: '65',
+        textStyle: {
+            fontSize: 26,
+            fontWeight: 'bold',
+            fontFamily: 'Microsoft YaHei',
+            color: '#000'
+        },
+        subtextStyle: {
+            fontStyle: 'italic',
+            fontSize: 13,
+            color: '#BEBEBE'
+        }
+    },
+    {
+        text: ' 　　　 2010     　 2011     　 2012     　 2013     　 2014     　 2015   　   2016 　     2017     　 2018 　     2019',
+        x: '102',
+        y: '505',
+        textStyle: {
+            fontSize: 13.5,
+            fontWeight: '',
+            fontFamily: 'Microsoft YaHei',
+            color: '#BEBEBE'
+        },
+    }],
+    color: ["#C58080", "#E1A4C4", "#C03C71", '#4F9D9D', "#7768C1", ],
+
+    tooltip: {},
+
+    legend: {
+        top: '28%',
+        textStyle: {
+            color: '#000',
+        },
+        data: ['超市&大卖场', '电商', '百货', '直销', '美妆专卖店']
+    },
+
+    singleAxis: {
+        top: '28%',
+        bottom: '5%',
+        left: '18%',
+        right: '18%',
+
+
+        axisLine: {
+            show: false,
+        },
+        axisTick: {
+            show: false,
+        },
+
+        axisLabel: {
+            show: false,
+        },
+
+        type: 'time',
+
+        // position: 'top',
+
+        splitLine: {
+            show: false,
+            lineStyle: {
+                show: false
+            }
+
+        },
+    },
+
+
+
+
+    series: [{
+        type: 'themeRiver',
+        label: {
+            normal: {
+                fontStyle: 'italic',
+                fontSize: 15,
+                fontFamily: 'KaiTi',
+                color: '#ffffff',
+                show: true,
+                position: 'left'
+            }
+        },
+        itemStyle: {
+            emphasis: {
+                shadowBlur: 10,
+                shadowColor: 'rgba(0, 0, 0, 0.6)'
+            }
+        },
+        data: [
+            ['2010', 35.3, '超市&大卖场'],
+            ['2010', 4.8, '电商'],
+            ['2010', 28.1, '百货'],
+
+            ['2010', 13.2, '直销'],
+            ['2010', 13.4, '美妆专卖店'],
+
+            ['2011', 34.1, '超市&大卖场'],
+            ['2011', 26.1, '百货'],
+            ['2011', 11.5, '直销'],
+            ['2011', 15.8, '美妆专卖店'],
+            ['2011', 5.2, '电商'],
+            ['2012', 33, '超市&大卖场'],
+            ['2012', 25, '百货'],
+            ['2012', 11, '直销'],
+            ['2012', 16, '美妆专卖店'],
+            ['2012', 9.8, '电商'],
+            ['2013', 31.7, '超市&大卖场'],
+            ['2013', 23.3, '百货'],
+            ['2013', 11, '直销'],
+            ['2013', 16.5, '美妆专卖店'],
+            ['2013', 13, '电商'],
+            ['2014', 31, '超市&大卖场'],
+            ['2014', 20, '百货'],
+            ['2014', 11, '直销'],
+            ['2014', 17, '美妆专卖店'],
+            ['2014', 16, '电商'],
+            ['2015', 29, '超市&大卖场'],
+            ['2015', 19, '百货'],
+            ['2015', 11, '直销'],
+            ['2015', 18, '美妆专卖店'],
+            ['2015', 19, '电商'],
+            ['2016', 26.9, '超市&大卖场'],
+            ['2016', 18.7, '百货'],
+            ['2016', 10.2, '直销'],
+            ['2016', 18.2, '美妆专卖店'],
+            ['2016', 20.6, '电商'],
+            ['2017', 25.8, '超市&大卖场'],
+            ['2017', 18.7, '百货'],
+            ['2017', 9.7, '直销'],
+            ['2017', 19.8, '美妆专卖店'],
+            ['2017', 21.2, '电商'],
+            ['2018', 25, '超市&大卖场'],
+            ['2018', 18, '百货'],
+            ['2018', 8, '直销'],
+            ['2018', 20, '美妆专卖店'],
+            ['2018', 25, '电商'],
+
+        ]
+    }]
+};
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+</body>
+</html>
